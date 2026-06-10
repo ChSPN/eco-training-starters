@@ -15,7 +15,7 @@ Cas d'usage cible : consultation de la page de remboursements sur le site de la 
 - **KPI associé:** Taille du payload JSON initial < 50 Ko
 - **Repo ou écran concerné:** Page historique des remboursements — composant tableau paginé — endpoint /api/remboursements
 - **Critère de réussite:** Le tableau affiche 10 lignes au chargement initial ; les suivantes se chargent à la demande sans rechargement de page
-- **Niveau de priorité:** Haute
+- **Niveau de priorité:** Haute - M2
 ## User story 2
 
 - **Contexte:** En tant qu'allocataire CAF, je veux que la page de remboursements ne se rafraîchisse pas automatiquement, afin de ne pas générer des requêtes réseau inutiles pour des données qui ne changent pas en temps réel.
@@ -24,7 +24,7 @@ Cas d'usage cible : consultation de la page de remboursements sur le site de la 
 - **KPI associé:** 0 appel réseau détecté après 30 secondes d'inactivité (DevTools Network)
 - **Repo ou écran concerné:** Page remboursements — service de data fetching — hook ou composant de polling
 - **Critère de réussite:** Aucun appel réseau automatique visible dans l'onglet Network de DevTools après le chargement initial
-- **Niveau de priorité:** Haute
+- **Niveau de priorité:** Haute - M3
 ## User story 3
 
 - **Contexte:** En tant qu'allocataire CAF consultant régulièrement ses remboursements, je veux que les données déjà consultées soient mises en cache navigateur, afin de ne pas re-télécharger les mêmes informations à chaque visite.
