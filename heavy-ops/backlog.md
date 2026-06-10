@@ -24,7 +24,7 @@ Cas d'usage cible : consultation de la page de remboursements sur le site de la 
 - **KPI associé:** 0 appel réseau détecté après 30 secondes d'inactivité (DevTools Network)
 - **Repo ou écran concerné:** Page remboursements — service de data fetching — hook ou composant de polling
 - **Critère de réussite:** Aucun appel réseau automatique visible dans l'onglet Network de DevTools après le chargement initial
-- **Niveau de priorité:** Haute - M3
+- **Niveau de priorité:** Haute - M1
 ## User story 3
 
 - **Contexte:** En tant qu'allocataire CAF consultant régulièrement ses remboursements, je veux que les données déjà consultées soient mises en cache navigateur, afin de ne pas re-télécharger les mêmes informations à chaque visite.
@@ -33,4 +33,4 @@ Cas d'usage cible : consultation de la page de remboursements sur le site de la 
 - **KPI associé:** 0 requête réseau pour les données déjà chargées lors d'une deuxième consultation (DevTools Network → from cache)
 - **Repo ou écran concerné:** Page remboursements — configuration headers HTTP cache-control — assets statiques
 - **Critère de réussite:** Lors d'une deuxième visite, les ressources statiques et données stables apparaissent "from cache" dans DevTools Network
-- **Niveau de priorité:** Moyenne
+- **Niveau de priorité:** Moyenne - M3
