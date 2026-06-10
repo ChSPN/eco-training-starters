@@ -14,8 +14,9 @@ Cas d'usage cible : consultation de la page de remboursements sur le site de la 
 - **Bonne pratique d éco-conception ciblée:** Favoriser la pagination plutôt que le chargement infini (RGESN 4.2 / RWEB BP14)
 - **KPI associé:** Taille du payload JSON initial < 50 Ko
 - **Repo ou écran concerné:** Page historique des remboursements — composant tableau paginé — endpoint /api/remboursements
-- **Critère de réussite:** Le tableau affiche 10 lignes au chargement initial ; les suivantes se chargent à la demande sans rechargement de page
+- **Critère de réussite:** Le tableau affiche 10 lignes au chargement initial ; les suivantes se chargent à la demande sans rechargement de page + vérifier avec EcoIndex que le score s'améliore d'au moins une lettre par rapport à la mesure initiale
 - **Niveau de priorité:** Haute - M2
+
 ## User story 2
 
 - **Contexte:** En tant qu'allocataire CAF, je veux que la page de remboursements ne se rafraîchisse pas automatiquement, afin de ne pas générer des requêtes réseau inutiles pour des données qui ne changent pas en temps réel.
@@ -25,12 +26,13 @@ Cas d'usage cible : consultation de la page de remboursements sur le site de la 
 - **Repo ou écran concerné:** Page remboursements — service de data fetching — hook ou composant de polling
 - **Critère de réussite:** Aucun appel réseau automatique visible dans l'onglet Network de DevTools après le chargement initial
 - **Niveau de priorité:** Haute - M1
+
 ## User story 3
 
 - **Contexte:** En tant qu'allocataire CAF consultant régulièrement ses remboursements, je veux que les données déjà consultées soient mises en cache navigateur, afin de ne pas re-télécharger les mêmes informations à chaque visite.
 - **Objectif:** 100% des ressources statiques et données stables servies depuis le cache lors d'une deuxième visite
 - **Bonne pratique d éco-conception ciblée:** Mettre en cache les ressources statiques côté navigateur (RWEB BP49 / RGESN 6.7)
-- **KPI associé:** 0 requête réseau pour les données déjà chargées lors d'une deuxième consultation (DevTools Network → from cache)
+- **KPI associé:** 0 requête réseau pour les données déjà chargées lors d'une deuxième consultation
 - **Repo ou écran concerné:** Page remboursements — configuration headers HTTP cache-control — assets statiques
 - **Critère de réussite:** Lors d'une deuxième visite, les ressources statiques et données stables apparaissent "from cache" dans DevTools Network
 - **Niveau de priorité:** Moyenne - M3
