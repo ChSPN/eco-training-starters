@@ -39,7 +39,8 @@ app.get('/api/dashboard', (_req, res) => {
 });
 
 app.get('/api/records', (_req, res) => {
-  res.json(readJson('data/records.json'));
+  const records = readJson('data/records.json');
+  res.json(records.slice(0, 18));
 });
 
 app.get('/api/analytics', (_req, res) => {
