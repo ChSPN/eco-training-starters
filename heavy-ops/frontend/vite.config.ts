@@ -7,8 +7,25 @@ export default defineConfig({
     port: 5173,
     strictPort: true,
     proxy: {
-      '/api': 'http://localhost:4100',
-      '/assets': 'http://localhost:4100'
+      '/api': 'http://localhost:4100'
     }
+  },
+  preview: {
+    port: 4173,
+    proxy: {
+      '/api': 'http://localhost:4100'
+    }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom'],
+          router: ['react-router-dom']
+        }
+      }
+    },
+    minify: 'esbuild',
+    target: 'esnext'
   }
 });
