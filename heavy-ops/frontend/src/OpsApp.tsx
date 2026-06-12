@@ -650,8 +650,6 @@ export default function OpsApp() {
     }
 
     loadAll();
-    const timer = window.setInterval(loadAll, 5000);
-    return () => window.clearInterval(timer);
   }, [sessionToken]);
 
   const statusSummary = useMemo<StatusSnapshot[]>(() => {
